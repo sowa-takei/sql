@@ -115,8 +115,9 @@ ON countries.code = countrylanguages.country_code;
 -- 問27
 -- 全ての有名人を出力してください。左側外部結合を使用して国名なし（country_codeがNULL）も表示してください。
 SELECT celebrities.name,celebrities.country_code
-FROM celebrities LEFT JOIN countrylanguages
-ON celebrities.country_code = countrylanguages.language;
+FROM celebrities
+LEFT JOIN countries
+ON celebrities.name = countries.name
 
 -- 問28
 -- 全ての有名人の名前,国名、第一言語を出力してください。
